@@ -101,7 +101,7 @@
     };
 
 
-    $scope.cancelFunc = function () {
+    $scope.cancelFunction = function () {
         $scope.firstName = null;
         $scope.middleName = null;
         $scope.lastName = null;

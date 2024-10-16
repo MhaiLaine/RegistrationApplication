@@ -3,7 +3,7 @@
 
 /* MAIN */
 body {
-    background: url('assets/background.jpg');
+    background: url('assets/background.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -28,14 +28,18 @@ body {
 .cardGlassmorphism {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(2.4px);
     -webkit-backdrop-filter: blur(2.4px);
+    border-radius: 30px;
+    padding: 20px;
+    margin-bottom: 5em;
+    z-index: 1;
 }
 
 
-/* HELPER TEXT */
 
+/* HELPER TEXT */
     .input-field .helper-text {
         color: #ff5252 !important; 
         font-size: 10px !important;

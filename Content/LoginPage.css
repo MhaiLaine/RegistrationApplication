@@ -1,7 +1,79 @@
-﻿body {
-    background-color: darkslategrey;
+﻿/* MAIN BODY AREA */
+body {
+    background-color: darkslategrey
 
 /*    background: url('assets/placeholder.png');
     background-size: cover;
     background-repeat: no-repeat;*/
 }
+
+/* CARD AREA */
+.cardGlassmorphism {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.4px);
+    -webkit-backdrop-filter: blur(2.4px);
+    border-radius: 30px;
+    padding: 50px;
+    z-index: 1;
+}
+
+.title-image {
+    position: absolute;
+    top: 5em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.skLogo {
+    position: absolute;
+    top: -6em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.usernamePasswordContainer {
+    margin-top: 7em;
+}
+
+
+/* HELPER TEXT */
+.input-field .helper-text {
+    color: #ff5252 !important;
+    font-size: 10px !important;
+    margin-top: 0.3em;
+    display: block;
+}
+
+input:focus {
+    border-bottom: 1px solid orange !important; /* Change the bottom border to orange */
+    box-shadow: 0 1px 0 0 orange !important; /* Change the shadow effect to orange */
+}
+
+    /* Colors when the input is valid */
+    input.valid {
+        border-bottom: 1px solid orange !important; /* Change valid bottom border to orange */
+        box-shadow: 0 1px 0 0 orange !important; /* Change valid shadow effect to orange */
+    }
+
+    /* Label color when the input is focused or valid */
+    input:focus + label, input.valid + label {
+        color: orange !important; /* Change label text color to orange */
+    }
+
+    /* Change the icon color when the input field is focused */
+    .input-field .material-icons {
+        color: #9e9e9e; /* Default color */
+    }
+
+    /* When the input is focused, apply orange color to the icon */
+    .input-field input:focus ~ .material-icons {
+        color: orange !important;
+    }
+
+    /* Also apply orange color when the input is valid */
+    .input-field input.valid ~ .material-icons {
+        color: orange !important;
+    }

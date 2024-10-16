@@ -6,9 +6,9 @@
 	<div class="row">
 		<div class="col s12 m12 l12"></div>
 	</div>
-
 </div>
 	
+
 	<div class="row center">
 		<div class="col s3 m3 l3"></div>
 
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col s12 m12 l12">
-                    <div class="card cardGlassmorphism" style="border-radius: 30px; padding: 20px; margin-bottom: 5em; z-index: 1;">
+                    <div class="card cardGlassmorphism">
                         <form name="registrationForm" class="card-content black-text">
                             <div class="row">
 
@@ -43,9 +43,9 @@
 
                                     @*FROM MATERIALIZECSS - Helper Text is used for custom validation messages*@
                                     @*$error - built-in feature of the form validation system of AngularJS.
-            Here, it is used to check if the input fails to meet the validation rules
-            such as if the user fails to fill up the required form or did not complete the field
-            when the field was touched or filled up *@
+                                        Here, it is used to check if the input fails to meet the validation rules
+                                        such as if the user fails to fill up the required form or did not complete the field
+                                        when the field was touched or filled up *@
 
                                     <span class="helper-text" style="position: absolute; bottom: -3em; left: 0;"
                                           ng-if="(registrationForm.fName.$touched || registrationForm.fName.$dirty)">
@@ -101,9 +101,9 @@
                                 </div>
 
                                 @*Email Form Field
-        According to RFC 3696 - a document by IETF (org that defines the guidelines and standards of Internet.),
-        An email address can have a total length of 320 characters. 64 characters for the local address before
-        the @ (which counts as 1 character) and 255 characters for the FQDN (Fully Qualified Domain Name)*@
+                                    According to RFC 3696 - a document by IETF (org that defines the guidelines and standards of Internet.),
+                                    An email address can have a total length of 320 characters. 64 characters for the local address before
+                                    the @ (which counts as 1 character) and 255 characters for the FQDN (Fully Qualified Domain Name)*@
                                 <div class="input-field col s6 m6 l6">
                                     <i class="material-icons prefix">email</i>
                                     <input id="email" name="email" type="email" class="validate" ng-model="email" autocomplete="on"
@@ -185,7 +185,7 @@
 
 
                                     <div class="col s12 m6 l6">
-                                        <a class="waves-effect waves-light btn-large col s12 m12 l12 red darken-4" ng-click="cancelFunc()" ng-disabled="registrationForm.$pristine"><i class="material-icons left">remove_circle</i>Cancel</a>
+                                        <a class="waves-effect waves-light btn-large col s12 m12 l12 red darken-4" ng-click="cancelFunction()" ng-disabled="registrationForm.$pristine"><i class="material-icons left">remove_circle</i>Cancel</a>
                                     </div>
 
                                 </div>
