@@ -131,6 +131,7 @@
     <Content Include="Content\assets\background.gif" />
     <Content Include="Content\assets\background.jpg" />
     <Content Include="Content\assets\login.png" />
+    <Content Include="Content\assets\loginBackground.png" />
     <Content Include="Content\assets\placeholder.png" />
     <Content Include="Content\assets\saantitle.png" />
     <Content Include="Content\assets\skLogo.ico" />
