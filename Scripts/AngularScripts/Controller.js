@@ -3,7 +3,6 @@
     $scope.emailPattern = /^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     var userCredentials = [];
-    // to insert data into the array, we use the pre-defined function named push
 
     //submit Button
     $scope.submitRegistration = function () {
@@ -23,7 +22,6 @@
         //querying through the array / searching
         var newUserSearch = userCredentials.find(searchUser =>
             searchUser.FirstName === $scope.firstName &&
-            searchUser.MiddleName === $scope.middleName &&
             searchUser.LastName === $scope.lastName
         );
 
@@ -94,7 +92,6 @@
 
         if (userExists) {
             // If user is found, proceed to dashboard or home page
-            Swal.fire("Login successful!");
             window.location.href = "/Home/Dashboard";
         } else {
             // If no match, display error message
