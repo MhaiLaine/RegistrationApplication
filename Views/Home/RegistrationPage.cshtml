@@ -41,12 +41,6 @@
                                            required>
                                     <label for="fName">First Name</label>
 
-                                    @*FROM MATERIALIZECSS - Helper Text is used for custom validation messages*@
-                                    @*$error - built-in feature of the form validation system of AngularJS.
-            Here, it is used to check if the input fails to meet the validation rules
-            such as if the user fails to fill up the required form or did not complete the field
-            when the field was touched or filled up *@
-
                                     <span class="helper-text" style="position: absolute; bottom: -3em; left: 0;"
                                           ng-if="(registrationForm.fName.$touched || registrationForm.fName.$dirty)">
                                         <span ng-if="registrationForm.fName.$error.required">First name is required.</span>
@@ -174,7 +168,7 @@
                                 </div>
 
 
-                                @* getInputData function will hold the information that we will store in our array *@
+                                @* Submit & Cancel Buttons *@
                                 <div class="col s12 m12 l12" style="margin-top: 3em;">
                                     <div class="col s12 m6 l6">
                                         <a class="waves-effect waves-light btn-large col s12 m12 l12 green darken-1" ng-click="submitRegistration()" ng-disabled="registrationForm.$invalid"><i class="material-icons left">check_circle</i>Submit</a>

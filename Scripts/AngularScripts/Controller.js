@@ -84,13 +84,13 @@
         // Get credentials from sessionStorage
         var storedCredentials = sessionStorage.getItem("credentials");
 
-        /* If credentials were saved in sessionStorage, they are retrieved, converted back to an array of user objects, and stored in userCredentials.
-        If not, userCredentials is initialized as an empty array, meaning no users are registered yet.*/
+        /* If credentials were saved in sessionStorage, they are retrieved then converted back to array and stored in userCredentials.
+        If not, userCredentials is an empty array, meaning no users are registered yet.*/
         var userCredentials = storedCredentials ? JSON.parse(storedCredentials) : [];
 
         // Retrieve username and password input
-        var enteredUsername = $scope.username; // Assuming you have a field for username
-        var enteredPassword = $scope.userPassword; // Password input from the user
+        var enteredUsername = $scope.username; 
+        var enteredPassword = $scope.userPassword; 
 
         // Find the user in the credentials array
         var userExists = userCredentials.find(userSearch =>
