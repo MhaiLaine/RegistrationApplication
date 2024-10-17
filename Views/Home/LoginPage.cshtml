@@ -35,8 +35,7 @@
                                 </div>
 
                                 <div class="row usernamePasswordContainer">
-                                    @*Username Form Field
-                                        VALIDATION: Character count (3-15)*@
+                                    @*Username Form Field*@
                                     <div class="input-field col s12 m12 l12">
                                         <i class="material-icons prefix">face</i>
                                         <input id="username" name="username" type="text" class="validate" ng-model="username" required>
@@ -60,7 +59,8 @@
 
                                         <span class="helper-text" ng-if="(loginForm.userPassword.$touched || loginForm.userPassword.$dirty)">
                                             <span ng-if="loginForm.userPassword.$error.required">Password is required.</span>
-
+                                            <span ng-if="loginForm.userPassword.$error.minlength">Password must be at least 8 characters long.</span>
+                                            <span ng-if="loginForm.userPassword.$error.maxlength">Password cannot exceed 20 characters.</span>
                                         </span>
                                     </div>
                                 </div>
