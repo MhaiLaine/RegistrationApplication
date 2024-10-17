@@ -1,2 +1,5 @@
 ﻿body {
+    background: url('assets/dashboard.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
