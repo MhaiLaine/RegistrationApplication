@@ -70,7 +70,11 @@
             });
 
         } else {
-            alert("User is already existing!");
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "User already exists!",
+            });
             $scope.cancelFunction();
         }
     };
