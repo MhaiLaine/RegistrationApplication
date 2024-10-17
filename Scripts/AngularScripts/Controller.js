@@ -22,6 +22,7 @@
         //querying through the array / searching
         var newUserSearch = userCredentials.find(searchUser =>
             searchUser.FirstName === $scope.firstName &&
+            searchUser.MiddleName === $scope.middleName &&
             searchUser.LastName === $scope.lastName
         );
 
@@ -30,16 +31,7 @@
 
         //if undefined - push data in array
         if (newUserSearch === undefined) {
-            /* inside push, naka-key pair value, updating and deleting value in the data is made easier this way
-            * key : value
-            * key - name of the data (any var name)
-             value - based on the name of the ng-model (in reg page) */
-            userCredentials.push(registrationData); 
-
-            /*to verify if the message was successfully pushed 
-            * using the length function, it will help us identify the current number of elements inserted in the array
-              length means count in js */
-            // alert(userCredentials.length);
+            userCredentials.push(registrationData);
 
             //convert array to JSON string para sa session Storage ng browser
             var sessionString = JSON.stringify(userCredentials);
@@ -49,32 +41,41 @@
 
 
             var postData = RegistrationApplicationService.threeFunc(registrationData);
-                postData.then(function (ReturnedData) {
-                    var userFirstName = ReturnedData.data.FirstName;
-                    var userMiddleName = ReturnedData.data.MiddleName;
-                    var userLastName = ReturnedData.data.LastName;
-                    var userAddress = ReturnedData.data.Address;
-                    var userEmail = ReturnedData.data.Email;
-                    var userPhoneNumber = ReturnedData.data.PhoneNumber;
-                    var userPassword = ReturnedData.data.Password;
-                    var userUsername = ReturnedData.data.Username;
-                });
+            postData.then(function (ReturnedData) {
+                var userFirstName = ReturnedData.data.FirstName;
+                var userMiddleName = ReturnedData.data.MiddleName;
+                var userLastName = ReturnedData.data.LastName;
+                var userAddress = ReturnedData.data.Address;
+                var userEmail = ReturnedData.data.Email;
+                var userPhoneNumber = ReturnedData.data.PhoneNumber;
+                var userPassword = ReturnedData.data.Password;
+                var userUsername = ReturnedData.data.Username;
+            });
 
-            window.location.href = "/Home/LoginPage";
+            // Show Swal.fire first, then redirect after it completes
+            Swal.fire({
+                title: "Login Credentials",
+                html: `Username: ${registrationData.Username} <br> Password: ${registrationData.Password}`,
+                icon: "success",  // You can add an icon here if needed
+                timer: 10000,     // Duration for how long the popup will show
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            }).then((result) => {
+                // Redirect after Swal.fire closes (timer or user interaction)
+                if (result.dismiss === Swal.DismissReason.timer || result.isConfirmed) {
+                    window.location.href = "/Home/LoginPage";
+                }
+            });
 
-        }
-
-        else { //if user is not undefined kasi may existing value na 
+        } else {
             alert("User is already existing!");
-            // if user already exists, deletes all 
-            $scope.cancelFunc();
-
-            //redirect to another page - in this case, the login page na walang laman
-            //specify the path
-            window.location.href = "/Home/LoginPage";
+            $scope.cancelFunction();
         }
+    };
 
-    }
+
     $scope.loginFunction = function () {
         // Get credentials from sessionStorage
         var storedCredentials = sessionStorage.getItem("credentials");
@@ -95,7 +96,11 @@
             window.location.href = "/Home/Dashboard";
         } else {
             // If no match, display error message
-            Swal.fire("Invalid username or password!");
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Invalid Username or Password!",
+            });
             $scope.dataLoading = false;
         }
     };

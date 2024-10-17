@@ -16,6 +16,19 @@ body {
     font-size: 15px;
 }
 
+label {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #424242;
+}
+
+.active {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
 .input-field {
     margin-top: 1.4em !important;
 }
