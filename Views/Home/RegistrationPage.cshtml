@@ -43,9 +43,9 @@
 
                                     @*FROM MATERIALIZECSS - Helper Text is used for custom validation messages*@
                                     @*$error - built-in feature of the form validation system of AngularJS.
-                                        Here, it is used to check if the input fails to meet the validation rules
-                                        such as if the user fails to fill up the required form or did not complete the field
-                                        when the field was touched or filled up *@
+            Here, it is used to check if the input fails to meet the validation rules
+            such as if the user fails to fill up the required form or did not complete the field
+            when the field was touched or filled up *@
 
                                     <span class="helper-text" style="position: absolute; bottom: -3em; left: 0;"
                                           ng-if="(registrationForm.fName.$touched || registrationForm.fName.$dirty)">
@@ -56,30 +56,24 @@
                                     </span>
                                 </div>
 
-
-                                @*Address Form Field*@
+                                @*Phone Number Form Field*@
                                 <div class="input-field col s6 m6 l6">
-                                    <i class="material-icons prefix">place</i>
-                                    <input id="address" name="address" type="text" class="validate" ng-model="address" autocomplete="on"
-                                           ng-pattern="/^[a-zA-Z0-9#\-\.\s]+$/"
-                                           ng-minlength="5"
-                                           ng-maxlength="100"
-                                           data-length="100"
+                                    <i class="material-icons prefix">local_phone</i>
+                                    <input id="phoneNumber" name="phoneNumber" type="tel" class="validate" ng-model="phoneNumber"
+                                           ng-pattern="/^\d{7,11}$/"
+                                           ng-minlength="7"
+                                           ng-maxlength="11"
                                            required>
-                                    <label for="address">Address</label>
+                                    <label for="phoneNumber">Phone Number</label>
 
-                                    <span class="helper-text" style="position: absolute; bottom: -3em; left: 0;"
-                                          ng-if="(registrationForm.address.$touched || registrationForm.address.$dirty)">
-                                        <span ng-if="registrationForm.address.$error.required">Address is required.</span>
-                                        <span ng-if="registrationForm.address.$error.minlength">Address must be at least 5 characters long.</span>
-                                        <span ng-if="registrationForm.address.$error.maxlength">Address cannot exceed 100 characters.</span>
-                                        <span ng-if="registrationForm.address.$error.pattern">
-                                            Address can only include letters, numbers, #, -, ., and spaces.
-                                        </span>
+                                    <span class="helper-text" style="position: absolute; bottom: -2.5em; left: 0;"
+                                          ng-if="(registrationForm.phoneNumber.$touched || registrationForm.phoneNumber.$dirty)">
+                                        <span ng-if="registrationForm.phoneNumber.$error.required">Phone number is required.</span>
+                                        <span ng-if="registrationForm.phoneNumber.$error.pattern">Phone number must be valid.</span>
+                                        <span ng-if="registrationForm.phoneNumber.$error.minlength">Phone number must be at least 7 digits.</span>
+                                        <span ng-if="registrationForm.phoneNumber.$error.maxlength">Phone number cannot exceed 11 digits.</span>
                                     </span>
                                 </div>
-
-
 
                                 @*Middle Name Form Field*@
                                 <div class="input-field col s6 m6 l6">
@@ -139,26 +133,6 @@
                                 </div>
 
 
-                                @*Phone Number Form Field*@
-                                <div class="input-field col s6 m6 l6">
-                                    <i class="material-icons prefix">local_phone</i>
-                                    <input id="phoneNumber" name="phoneNumber" type="tel" class="validate" ng-model="phoneNumber"
-                                           ng-pattern="/^\d{7,11}$/"
-                                           ng-minlength="7"
-                                           ng-maxlength="11"
-                                           required>
-                                    <label for="phoneNumber">Phone Number</label>
-
-                                    <span class="helper-text" style="position: absolute; bottom: -2.5em; left: 0;"
-                                          ng-if="(registrationForm.phoneNumber.$touched || registrationForm.phoneNumber.$dirty)">
-                                        <span ng-if="registrationForm.phoneNumber.$error.required">Phone number is required.</span>
-                                        <span ng-if="registrationForm.phoneNumber.$error.pattern">Phone number must be valid.</span>
-                                        <span ng-if="registrationForm.phoneNumber.$error.minlength">Phone number must be at least 7 digits.</span>
-                                        <span ng-if="registrationForm.phoneNumber.$error.maxlength">Phone number cannot exceed 11 digits.</span>
-                                    </span>
-                                </div>
-
-
                                 @*Password Form Field*@
                                 <div class="input-field col s6 m6 l6">
                                     <i class="material-icons prefix">lock_outline</i>
@@ -173,6 +147,29 @@
                                         <span ng-if="registrationForm.userPassword.$error.required">Password is required.</span>
                                         <span ng-if="registrationForm.userPassword.$error.minlength">Password must be at least 8 characters long.</span>
                                         <span ng-if="registrationForm.userPassword.$error.maxlength">Password cannot exceed 20 characters.</span>
+                                    </span>
+                                </div>
+
+
+                                @*Address Form Field*@
+                                <div class="input-field col s12 m12 l12">
+                                    <i class="material-icons prefix">place</i>
+                                    <input id="address" name="address" type="text" class="validate" ng-model="address" autocomplete="on"
+                                           ng-pattern="/^[a-zA-Z0-9#\-\.\s]+$/"
+                                           ng-minlength="5"
+                                           ng-maxlength="100"
+                                           data-length="100"
+                                           required>
+                                    <label for="address">Address</label>
+
+                                    <span class="helper-text" style="position: absolute; bottom: -3em; left: 0;"
+                                          ng-if="(registrationForm.address.$touched || registrationForm.address.$dirty)">
+                                        <span ng-if="registrationForm.address.$error.required">Address is required.</span>
+                                        <span ng-if="registrationForm.address.$error.minlength">Address must be at least 5 characters long.</span>
+                                        <span ng-if="registrationForm.address.$error.maxlength">Address cannot exceed 100 characters.</span>
+                                        <span ng-if="registrationForm.address.$error.pattern">
+                                            Address can only include letters, numbers, #, -, ., and spaces.
+                                        </span>
                                     </span>
                                 </div>
 

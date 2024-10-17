@@ -52,18 +52,18 @@
                 var userUsername = ReturnedData.data.Username;
             });
 
-            // Show Swal.fire first, then redirect after it completes
+            // Swal.fire shows login credentials
             Swal.fire({
                 title: "Login Credentials",
                 html: `Username: ${registrationData.Username} <br> Password: ${registrationData.Password}`,
-                icon: "success",  // You can add an icon here if needed
-                timer: 10000,     // Duration for how long the popup will show
+                icon: "success",  
+                timer: 10000,     
                 timerProgressBar: true,
                 didOpen: () => {
                     Swal.showLoading();
                 }
             }).then((result) => {
-                // Redirect after Swal.fire closes (timer or user interaction)
+                // Redirect to Login after Swal.fire closes 
                 if (result.dismiss === Swal.DismissReason.timer || result.isConfirmed) {
                     window.location.href = "/Home/LoginPage";
                 }
@@ -83,6 +83,9 @@
     $scope.loginFunction = function () {
         // Get credentials from sessionStorage
         var storedCredentials = sessionStorage.getItem("credentials");
+
+        /* If credentials were saved in sessionStorage, they are retrieved, converted back to an array of user objects, and stored in userCredentials.
+        If not, userCredentials is initialized as an empty array, meaning no users are registered yet.*/
         var userCredentials = storedCredentials ? JSON.parse(storedCredentials) : [];
 
         // Retrieve username and password input
